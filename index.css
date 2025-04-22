@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .logo span {
+    color: #7cc33c;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Increased from 80vh to 100vh */
+    background: url('images/1.jpg') no-repeat center center/cover;
+    
+  
+    border-radius: 0 0 20px 20px;
+    border-bottom: 4px solid #7cc33c;
+  }
+  
+  .carousel .arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+  
+  .carousel .left {
+    left: 20px;
+  }
+  
+  .carousel .right {
+    right: 20px;
+  }
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-box {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  .footer-box h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: normal;
+  }
+  
+  .footer-box hr {
+    width: 60%;
+    height: 2px;
+    background-color: #7cc33c;
+    border: none;
+    margin-bottom: 15px;
+  }
+  
+  .footer-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .footer-box span {
+    color: #aaa;
+    font-size: 12px;
+  }
+  
+  .footer-logo {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+  
