@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Report</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #f5f9ff;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #002b5b;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      color: #35b0ff;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      margin: 15px 0;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      color: #35b0ff;
+    }
+
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Chan-care</h2>
+    <a href="#">Profile Update</a>
+    <a href="#">Book Appointment</a>
+    <a href="#">Appointment History</a>
+    <a href="#">Upload Report</a>
+  </div>
+
+  <div class="main">
+    <div class="card">
+      <h2> Upload Patient Report</h2>
+
+      <form action="submit_patient_report.php" method="POST">
+        <label for="name">Your Full Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="age">Your Age:</label>
+        <input type="number" name="age" required>
+
+        <label for="gmail">Your Gmail:</label>
+        <input type="email" name="gmail" required>
+
+        <label for="symptoms">Describe your symptoms:</label>
+        <textarea name="symptoms" required></textarea>
+
+        <label for="medication">Are you currently on any medication?</label>
+        <input type="text" name="medication">
+
+        <label for="new_patient">I am a new patient:</label>
+        <input type="checkbox" name="new_patient" id="new_patient" onchange="toggleCheckupDate()">
+
+        <div id="checkup_date_container">
+          <label for="last_checkup">Last Checkup Date:</label>
+          <input type="date" name="last_checkup" id="last_checkup">
+        </div>
+
+        <!-- NEW SECTION: Booking Status -->
+        <label for="appointment_booked">Have you booked your appointment?</label>
+        <select name="appointment_booked" id="appointment_booked" onchange="toggleAppointmentDate()" required>
+          <option value="">-- Select --</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <div id="appointment_date_container" style="display: none;">
+          <label for="appointment_date">Appointment Date:</label>
+          <input type="date" name="appointment_date" id="appointment_date">
+        </div>
+
+        <button type="submit">Submit Report</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function toggleCheckupDate() {
+      const checkbox = document.getElementById('new_patient');
+      const checkupContainer = document.getElementById('checkup_date_container');
+      const lastCheckupInput = document.getElementById('last_checkup');
+
+      if (checkbox.checked) {
+        checkupContainer.style.display = 'none';
+        lastCheckupInput.value = '';
+      } else {
+        checkupContainer.style.display = 'block';
+      }
+    }
+
+    function toggleAppointmentDate() {
+      const select = document.getElementById('appointment_booked');
+      const dateContainer = document.getElementById('appointment_date_container');
+      const dateInput = document.getElementById('appointment_date');
+
+      if (select.value === 'yes') {
+        dateContainer.style.display = 'block';
+      } else {
+        dateContainer.style.display = 'none';
+        dateInput.value = '';
+      }
+    }
+
+    window.onload = () => {
+      toggleCheckupDate();
+      toggleAppointmentDate();
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chan-care | Login</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- Navbar/Header -->
+  <header>
+    <div class="logo"><span>C</span>han-care</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="admin.html">DOCTORS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="blog.html">BLOGS</a>
+ 
+      <a href="register.html">REGISTRATION</a>
+      <a href="login.html">LOGIN</a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <main class="login-wrapper">
+    <div class="form-container">
+      <!-- Login Form -->
+      <div id="loginSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+
+          <label for="password">Password *</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+
+          <button type="submit">Login</button>
+          <p class="message" id="message"></p>
+        </form>
+
+        <p class="link">
+          <a href="#" id="forgotLink">Forgot password?</a>
+        </p>
+
+        <p class="link">
+          Don’t have an account? <a href="register.html">Register here</a>
+        </p>
+      </div>
+
+      <!-- Forgot/Reset Password Section -->
+      <div id="resetSection" style="display: none;">
+        <h2>Reset Password</h2>
+        <form id="resetForm">
+          <div id="otpArea" style="display: none;">
+            <p>Your OTP is: <strong id="otpDisplay"></strong></p>
+
+            <label for="otp">Enter OTP</label>
+            <input type="text" id="otp" placeholder="123456" required />
+
+            <label for="newPassword">New Password</label>
+            <input type="password" id="newPassword" placeholder="New password" required />
+
+            <button type="submit">Reset Password</button>
+          </div>
+        </form>
+
+        <p class="link">
+          <a href="login.html" id="backToLogin">Back to Login</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

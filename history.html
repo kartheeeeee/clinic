@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chancare - Appointment History</title>
+  <link rel="stylesheet" href="history.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Chan-care</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="updateuser.html">Profile Update</a>
+      <a href="appointment.html">Book Appointment</a>
+      <a href="history.html" class="active">Appointment History</a>
+      <a href="patient_report.html">upload report</a>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <div class="card">
+      <h2>Appointment History</h2>
+
+      <div id="appointmentDetails" class="appointment-card">
+        <!-- Data will be inserted here by JS -->
+      </div>
+    </div>
+  </div>
+  <div id="appointmentDetails"></div>
+  <script src="history.js"></script>
+</body>
+</html>

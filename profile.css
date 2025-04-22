@@ -1,0 +1,159 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f7fa;
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #00d9ff;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Main Content */
+  .content {
+    margin-left: 220px;
+    padding: 30px;
+    flex: 1;
+  }
+  
+  /* Top bar */
+  .top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Profile Box */
+  .profile-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #003366;
+  }
+  
+  .profile-box p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Form Fields */
+  .profile-box form {
+    margin-top: 15px;
+  }
+  
+  .profile-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-box input,
+  .profile-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+  }
+  
+  .profile-box input:disabled,
+  .profile-box textarea:disabled {
+    background-color: #e9ecef;
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  #editBtn,
+  #saveBtn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  #editBtn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  #editBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  #saveBtn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  #saveBtn:hover {
+    background-color: #1e7e34;
+  }
+  

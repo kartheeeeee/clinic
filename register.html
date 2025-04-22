@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Chan-care</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><span>C</span>han-care</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.css">ABOUT US</a>
+      <a href="admin.html">DOCTORS</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="blog.html">BLOGS</a>
+      <a href="register.html">REGISTRATION</a>
+      <a href="login.html">LOGIN</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>REGISTER</h2>
+    <h3>Register a new account</h3>
+    <p>Already Signed Up? Click <a href="login.html" class="signin-link">Sign In</a> to login to your account.</p>
+    
+    <form id="registerForm" action="register.php" method="POST">
+
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required />
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required />
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required />
+
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" required />
+
+      <fieldset class="gender-group">
+        <legend>Gender</legend>
+        <label><input type="radio" name="gender" value="Female" required /> Female</label>
+        <label><input type="radio" name="gender" value="Male" /> Male</label>
+        <label><input type="radio" name="gender" value="Transgender" /> Transgender</label>
+      </fieldset>
+      
+      <div class="password-group">
+        <div>
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm Password *</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+        </div>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" id="terms" required />
+        <label for="terms">I read <a href="terms.html" class="terms">Terms and Conditions</a></label>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="logo"><span>C</span>han-care</div>
+    <div class="footer-container">
+      <div class="footer-box">
+        <p>
+          At Chancare Hospital, we are convinced that "We don’t just fix bodies — we uplift lives."
+        </p>
+        <p>
+          "To heal with care, serve with compassion, and lead with integrity — making world-class healthcare accessible to all."
+        </p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Latest Posts</h3>
+        <hr />
+        <p><strong>Incredible content</strong><br><span>December 16, 2020</span></p>
+        <p><strong>Latest Images</strong><br><span>December 16, 2020</span></p>
+        <p><strong>Terms and Conditions</strong><br><span>December 16, 2020</span></p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Useful Links</h3>
+        <hr />
+        <p>ABOUT US &#8250;</p>
+        <p>CONTACT US &#8250;</p>
+        <p>BOOK APPOINTMENT &#8250;</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Us</h3>
+        <hr />
+        <p>ChanCareHospital</p>
+        <p>Chennai, IN</p>
+        <p>Phone: 755 455 6063</p>
+        <p>Email: chancare@gmail.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login | Chan-care</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>C</span>han-care</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="register.html">user login</a>
+    </nav>
+  </header>
+
+  <main class="login-wrapper">
+    <div class="form-container">
+      <h2>Admin Login</h2>
+      <form id="adminLoginForm">
+        <label for="adminEmail">Admin Email *</label>
+        <input type="email" id="adminEmail" placeholder="admin@gmail.com" required />
+
+        <label for="adminPassword">Password *</label>
+        <input type="password" id="adminPassword" placeholder="Enter password" required />
+
+        <button type="submit">Login as Admin</button>
+        <p class="message" id="adminMessage"></p>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    // Auto-create the admin if not exists
+    const adminUser = {
+      firstName: "Admin",
+      lastName: "User",
+      email: "admin@gmail.com",
+      password: "admin123",
+      isAdmin: true
+    };
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    const adminExists = users.some(user => user.email === adminUser.email);
+    if (!adminExists) {
+      users.push(adminUser);
+      localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    // Handle admin login
+    document.getElementById("adminLoginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("adminEmail").value.trim();
+      const password = document.getElementById("adminPassword").value.trim();
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const admin = users.find(user => user.email === email && user.password === password && user.isAdmin);
+
+      if (admin) {
+        localStorage.setItem("loggedInUser", JSON.stringify(admin));
+        // Redirect to report.php after login
+        window.location.href = "report.php";
+      } else {
+        document.getElementById("adminMessage").textContent = "Invalid admin credentials.";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
